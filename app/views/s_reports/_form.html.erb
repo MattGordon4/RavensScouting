@@ -1,0 +1,48 @@
+<div class="card">
+  <div class="card-header">
+    <h4>Scouting Report</h4>
+  </div>
+  <div class="card-body">
+    
+    
+<%= form_with(model: s_report) do |form| %>
+  <div class="field form-group">
+    <%= form.text_field :name, class:"form-control", placeholder:"Name", autofocus: true %>
+  </div>
+  <br />
+  <div class="field form-group">
+    <%= form.text_field :ht, class:"form-control", placeholder:"Height", autofocus: true %>
+  </div>
+  <br />
+  <div class="field form-group">
+    <%= form.text_field :wt, class:"form-control", placeholder:"Weight", autofocus: true %>
+  </div>
+  <br />
+  <div class="field form-group">
+    <%= form.text_field :pos, class:"form-control", placeholder:"Position", autofocus: true %>
+  </div>
+  <br />
+  <div class="field form-group">
+    <%= form.text_field :school, class:"form-control", placeholder:"School", autofocus: true %>
+  </div>
+  <br />
+  <div class="field form-group">
+    <%= form.text_area :notes, class:"form-control", placeholder:"Notes", autofocus: true %>
+  </div>
+  <div class="field form-group">
+    <%= form.text_field :scout, class:"form-control", placeholder:"Scout Email", value: current_user.email, type: :hidden %>
+  </div>
+  <br />
+  <div class="field form-group">
+    <%= form.text_field :links, class:"form-control", placeholder:"Links", autofocus: true %>
+  </div>
+  <br />
+  <div class="field form-group">
+    <%= form.text_field :user_id, id: :s_report_user_id, class:"form-control", value: current_user.id, type: :hidden %>
+  </div>
+  <div class="actions">
+    <%= form.submit "Post", class:"btn btn-dark btn-block mb-4"%>
+  </div>
+<% end %>
+  </div>
+</div>

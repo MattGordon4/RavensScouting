@@ -1,0 +1,25 @@
+<br />
+<%= link_to "New Scouting Report", new_s_report_path, class: "btn btn-secondary btn-lg", style: "margin-left:59px" %>
+<div id="s_reports">
+    <% @s_reports.each do |s_report| %>
+
+    <div class="card flex-md-row mb-4 shadow-sm h-md-250 card-left">
+        <div class="card-body d-flex flex-column align-items-start">
+            <h3 class="mb-0">
+                <%= s_report.name %>
+            </h3>
+            <div class="mb-1 text-muted"><%= s_report.ht %> | <%= s_report.wt %> | <%= s_report.pos %> | <%= s_report.school %></div>
+            <br />
+            <p class="card-text mb-auto"><%= s_report.notes %></p>
+            <br />
+            <p class="card-text mb-auto">Link(s): <%= s_report.links %></p>
+            <br />
+            <div class="mb-1 text-muted">Scout Email: <%= s_report.scout %></div>
+            <br />
+            <% if s_report.user_id == current_user.id %>
+                <%= link_to "Edit", edit_s_report_path(s_report), class: "btn btn-secondary" %>
+            <% end %>
+        </div>
+    </div>
+    <% end %>
+</div>
