@@ -15,10 +15,10 @@
         <li class="nav-item">
           <%= link_to "2022 Roster", roster_index_path, class:"nav-link active" %>
         </li>
-        <li class="nav-item">
+        <% if user_signed_in? %>
+          <li class="nav-item">
           <%= link_to "Scouting Reports", s_reports_path, class:"nav-link active" %>
           </li>
-        <% if user_signed_in? %>
           <li class="nav-item">
             <%= link_to "Edit Profile", edit_user_registration_path, class:"nav-link active" %>
           </li>
