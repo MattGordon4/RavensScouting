@@ -1,22 +1,19 @@
 <nav class="navbar navbar-dark navbar-expand-md" style="background-color: #241773;">
   <div class="container-fluid">
-   <a class="navbar-brand" href="#">
-      <%= image_tag("Ravens.png", size: "70x75", :alt => "rss feed") -%>
-      Baltimore Ravens
-    </a>
+    <%= link_to (image_tag("Ravens.png", size: "110x110", :alt => "rss feed")), root_path, class:"navbar-brand" %>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <%= link_to "Home", root_path, class:"nav-link active" %>
+          <%= link_to "About The Project", frontpage_abouttheproject_path, class:"nav-link active" %>
         </li>
         <li class="nav-item">
           <%= link_to "2022 Schedule", schedule_index_path, class:"nav-link active" %>
         </li>
         <li class="nav-item">
-          <%= link_to "Roster", roster_index_path, class:"nav-link active" %>
+          <%= link_to "2022 Roster", roster_index_path, class:"nav-link active" %>
         </li>
         <li class="nav-item">
           <%= link_to "Scouting Reports", s_reports_path, class:"nav-link active" %>
