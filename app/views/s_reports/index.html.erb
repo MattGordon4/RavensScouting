@@ -1,6 +1,6 @@
 <br />
 <%= link_to "New Scouting Report", new_s_report_path, class: "btn btn-secondary btn-lg", style: "margin-left:59px" %>
-<div id="s_reports">
+<div id="scoutingreports">
     <% @s_reports.each do |s_report| %>
 
     <div class="card flex-md-row mb-4 shadow-sm h-md-250 card-left">
@@ -10,9 +10,9 @@
             </h3>
             <div class="mb-1 text-muted"><%= s_report.ht %> | <%= s_report.wt %> | <%= s_report.pos %> | <%= s_report.school %></div>
             <br />
-            <p class="card-text mb-auto"><%= s_report.notes %></p>
+            <div class="card-text mb-auto"><%= s_report.notes %></div>
             <br />
-            <p class="card-text mb-auto">Link(s): <%= s_report.links %></p>
+            <div class="card-text mb-auto">Link(s): <%= s_report.links %></div>
             <br />
             <div class="mb-1 text-muted">Scout Email: <%= s_report.scout %></div>
             <br />
