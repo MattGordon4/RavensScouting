@@ -18,7 +18,7 @@ class SReportsController < ApplicationController
 
   # GET /s_reports/1/edit
   def edit
-     if @s_report.user_id != current_user.id 
+     if @s_report.user_id != current_user.id && current_user.id != 1
         respond_to do |f| 
           f.html { redirect_to s_reports_path, notice: "Cannot Edit this Scouting Report as it belongs to" + " " + @s_report.scout }
         end
