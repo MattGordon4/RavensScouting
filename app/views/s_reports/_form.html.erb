@@ -5,21 +5,32 @@
   <div class="card-body">
     
     
-<%= form_with(model: s_report) do |form| %>
+<%= form_with(model: @s_report) do |form| %>
+  <% if @s_report.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@s_report.errors.count, "error") %> prohibited this report from being saved:</h2>
+
+      <ul>
+      <% @s_report.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
   <div class="field form-group">
-    <%= form.text_field :name, class:"form-control", placeholder:"Name", autofocus: true %>
+    <%= form.text_field :name, class:"form-control", placeholder:"Name (First and Last)", autofocus: true %>
   </div>
   <br />
   <div class="field form-group">
-    <%= form.text_field :ht, class:"form-control", placeholder:"Height", autofocus: true %>
+    <%= form.text_field :ht, class:"form-control", placeholder:"Height (e.g. 6'3)", autofocus: true %>
   </div>
   <br />
   <div class="field form-group">
-    <%= form.text_field :wt, class:"form-control", placeholder:"Weight", autofocus: true %>
+    <%= form.text_field :wt, class:"form-control", placeholder:"Weight (e.g. 285)", autofocus: true %>
   </div>
   <br />
   <div class="field form-group">
-    <%= form.text_field :pos, class:"form-control", placeholder:"Position", autofocus: true %>
+    <%= form.text_field :pos, class:"form-control", placeholder:"Position (e.g. QB, RB, WR, etc.)", autofocus: true %>
   </div>
   <br />
   <div class="field form-group">
@@ -34,7 +45,7 @@
   </div>
   <br />
   <div class="field form-group">
-    <%= form.text_field :links, class:"form-control", placeholder:"Links", autofocus: true %>
+    <%= form.text_field :links, class:"form-control", placeholder:"Links (N/A if none)", autofocus: true %>
   </div>
   <br />
   <div class="field form-group">
