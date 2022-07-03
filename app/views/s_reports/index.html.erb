@@ -16,7 +16,7 @@
             <br />
             <div class="mb-1">Scout Email: <%= s_report.scout %></div>
             <br />
-            <% if s_report.user_id == current_user.id || current_user.id = 1 %>
+            <% if s_report.user_id == current_user.id || current_user.id == 1 %>
                 <%= link_to "Edit", edit_s_report_path(s_report), class: "btn btn-secondary" %>
             <% end %>
         </div>
